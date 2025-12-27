@@ -1,0 +1,17 @@
+/**
+ * =============================================================================
+ * GLOBAL STYLES
+ * =============================================================================
+ *
+ * This file imports Tailwind CSS and sets base styles.
+ *
+ * =============================================================================
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
