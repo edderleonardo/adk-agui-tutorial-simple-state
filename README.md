@@ -512,12 +512,48 @@ You should see:
 2. The chat sidebar should open automatically
 3. Try these commands:
 
-| Command | What Happens |
-|---------|--------------|
-| "Save the word moon" | Saves to state, UI shows "moon" |
-| "Write me a haiku" | Creates poem using "moon" |
-| "Reverse the word hello" | Returns "olleh" (no state) |
-| "What's my word?" | Returns the saved word |
+#### Save a word (uses state)
+```
+You: "Save the word moon"
+Agent: Saves "moon" to state
+UI: Shows "Saved word: moon"
+```
+
+#### Ask for a poem (reads from state)
+```
+You: "Write me a haiku"
+Agent: Calls get_word() → gets "moon" → writes poem using that word
+Response: A haiku about the moon
+```
+
+#### Other poem requests
+```
+"Write me a sonnet"
+"Create a short poem"
+"Make a limerick about my word"
+```
+
+#### Reverse a word (NO state - standalone tool)
+```
+You: "Reverse the word hello"
+Agent: Calls reverse_word("hello") directly
+Response: "olleh"
+```
+
+#### Check your saved word
+```
+You: "What's my word?"
+Agent: Calls get_word() → returns "moon"
+```
+
+#### Quick Reference
+
+| Command | Tool Used | Uses State? |
+|---------|-----------|-------------|
+| "Save the word X" | `save_word` | Yes (writes) |
+| "Write me a poem" | `get_word` | Yes (reads) |
+| "What's my word?" | `get_word` | Yes (reads) |
+| "Reverse the word X" | `reverse_word` | No |
 
 ### Project URLs
 

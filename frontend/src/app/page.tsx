@@ -79,9 +79,10 @@ export default function Home() {
         <div className="bg-white rounded-lg shadow p-6">
           <h2 className="text-xl font-semibold mb-4">How to use</h2>
           <ul className="list-disc list-inside text-gray-600 space-y-2">
-            <li>Click the chat icon in the bottom-right corner</li>
-            <li>Say "Save the word pizza" to save a word</li>
-            <li>Ask anything and the agent will remind you of your word</li>
+            <li><strong>Save a word:</strong> "Save the word moon"</li>
+            <li><strong>Request a poem:</strong> "Write me a haiku" or "Create a sonnet"</li>
+            <li><strong>Reverse a word:</strong> "Reverse the word hello"</li>
+            <li><strong>Check your word:</strong> "What's my word?"</li>
           </ul>
         </div>
       </div>
@@ -90,9 +91,9 @@ export default function Home() {
       <CopilotSidebar
         defaultOpen={true}
         labels={{
-          title: "Word Agent",
+          title: "Poet Agent",
           initial:
-            "Hi! I can remember a word for you. Try saying 'Save the word pizza' or just chat with me!"
+            "Hi! I'm a poet assistant. Save a word and I'll write poems using it! Try: 'Save the word moon' then 'Write me a haiku'"
         }}
       />
     </div>
